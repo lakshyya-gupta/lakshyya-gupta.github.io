@@ -1,246 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Lakshya Gupta | Accounting & ACCA</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lakshya Gupta | Finance & Accounting</title>
+<meta name="description" content="Lakshya Gupta: B.Com IFA graduate working towards ACCA. IFRS, financial statements, EPS, deferred tax. Open to finance, accounting and operations roles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #020617;
-  --card: #0f172a;
-  --accent: #38bdf8;
-  --accent2: #22c55e;
-  --text: #e5e7eb;
-  --muted: #94a3b8;
+:root{
+  --blue:#2438FF; --ink:#0E0F1A; --tang:#FF6A2B; --lime:#D8FF47; --wash:#EEF0FF; --paper:#fff; --muted:#555A70;
+  --head:"Syne","Arial Black",Helvetica,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--tang);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--head);font-weight:800;margin:0;line-height:1}
+h2{font-size:clamp(2rem,6vw,3.4rem);letter-spacing:-.02em}
+h3{font-size:1.35rem;letter-spacing:-.01em}
+section{padding:5rem 0 0}
+p{margin:0 0 1rem}
 
-* { box-sizing: border-box; }
+header.top{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:.7rem;padding-bottom:.7rem}
+.logo{font-family:var(--head);font-weight:800;font-size:1.4rem;text-decoration:none}
+nav{display:flex;gap:.4rem;align-items:center}
+nav a{text-decoration:none;font-weight:500;padding:.3rem .8rem;border-radius:999px}
+nav a:hover{background:var(--wash)}
+nav a.hire{background:var(--ink);color:#fff}
+nav a.hire:hover{background:var(--blue)}
 
-body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont;
-  background: radial-gradient(circle at top, #1e293b, #020617);
-  color: var(--text);
-  line-height: 1.7;
+/* hero */
+.hero{background:var(--blue);color:#fff;margin-top:0;padding:4.5rem 0 0;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(3.4rem,14.5vw,10.5rem);letter-spacing:-.04em;line-height:.88;max-width:9ch}
+.hero .say{font-size:clamp(1.2rem,3vw,1.7rem);font-weight:500;max-width:26ch;margin:2rem 0 2rem;line-height:1.35}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{font-family:var(--body);font-weight:600;font-size:1rem;text-decoration:none;padding:.85rem 1.5rem;border-radius:999px;border:2px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.btn.fill{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.btn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.badge{position:absolute;right:max(1.5rem,calc((100vw - 1080px)/2 + 1.5rem));top:3.5rem;width:170px;height:170px}
+.badge svg{width:100%;height:100%;animation:spin 22s linear infinite}
+.badge text{font-family:var(--head);font-weight:700;font-size:16px;fill:var(--lime)}
+.badge b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--head);font-size:1.5rem;font-weight:800;color:var(--lime)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:4rem;border-top:2px solid rgba(255,255,255,.35)}
+.facts div{padding:1.2rem 1rem 1.4rem 0;font-weight:500;line-height:1.35}
+.facts div+div{padding-left:1.2rem;border-left:2px solid rgba(255,255,255,.35)}
+.facts small{display:block;opacity:.75;font-size:.9rem}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:1fr 2fr;gap:2rem}
+.about .big{font-size:clamp(1.3rem,2.6vw,1.75rem);font-weight:500;line-height:1.4;margin:0 0 1.2rem}
+
+/* skills */
+.srow{display:grid;grid-template-columns:240px 1fr;gap:1rem 2rem;padding:1.6rem 0;border-top:2px solid var(--ink)}
+.srow:last-child{border-bottom:2px solid var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0}
+.chips li{border:2px solid var(--ink);border-radius:999px;padding:.2rem .9rem;font-weight:500}
+.chips li:nth-child(3n+1){background:var(--wash)}
+.chips li:nth-child(3n+2){background:var(--lime)}
+.skills h2{margin-bottom:2rem}
+
+/* experience + education */
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:1.5rem}
+.panel{border-radius:28px;padding:2rem}
+.panel.a{background:var(--wash)}
+.panel.b{background:var(--lime)}
+.panel .when{font-weight:600;margin:.5rem 0 1.2rem;color:var(--muted)}
+.panel.b .when{color:#3a4200}
+.panel ul{margin:0;padding-left:1.1rem}
+.panel li{margin-bottom:.6rem}
+.exp h2{margin-bottom:2rem}
+
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 2rem}
+.filters button{font:600 1rem var(--body);background:transparent;border:2px solid var(--ink);border-radius:999px;padding:.3rem 1rem;cursor:pointer;color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.proj{border:0;text-align:left;font:inherit;color:var(--ink);cursor:pointer;border-radius:28px;padding:1.6rem;display:flex;flex-direction:column;gap:.8rem;min-height:250px;transition:transform .2s}
+.proj:hover{transform:translateY(-5px)}
+.proj h3{font-size:1.5rem}
+.proj p{margin:0}
+.proj .tag{align-self:flex-start;border:2px solid var(--ink);border-radius:999px;padding:0 .7rem;font-weight:600;font-size:.9rem}
+.proj .more{margin-top:auto;font-weight:600}
+.c0{background:var(--wash)} .c1{background:var(--lime)} .c2{background:#FFD0BA} .c3{background:#CDD3FF}
+.proj.empty{background:transparent;border:2px dashed var(--ink);justify-content:center;align-items:center;text-align:center;cursor:default;color:var(--muted)}
+.proj.empty:hover{transform:none}
+@media (min-width:760px){.pgrid .proj:first-child:not(.empty){grid-column:span 2}}
+.hidden{display:none}
+
+dialog{border:2px solid var(--ink);border-radius:28px;max-width:560px;width:calc(100% - 2rem);padding:2rem;font-family:var(--body);color:var(--ink)}
+dialog::backdrop{background:rgba(14,15,26,.6)}
+dialog h3{font-size:1.9rem;margin:.6rem 0}
+dialog .tag{border:2px solid var(--ink);border-radius:999px;padding:0 .7rem;font-weight:600;font-size:.9rem}
+dialog ul{padding-left:1.1rem;margin:1rem 0}
+dialog li{margin-bottom:.4rem}
+dialog .btns{margin-top:1.4rem}
+dialog .btn:hover{color:#fff}
+dialog .btn.fill{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* contact */
+.contact{background:var(--tang);margin-top:5rem;padding:5rem 0 4rem}
+.contact h2{margin-bottom:1.5rem}
+.mail{display:inline-block;font-family:var(--head);font-weight:800;font-size:clamp(1.3rem,5.4vw,3.6rem);letter-spacing:-.02em;line-height:1.1;overflow-wrap:anywhere;margin-bottom:2rem}
+.mail:hover{color:#fff}
+.contact p{max-width:48ch;font-size:1.15rem}
+.contact .btn:hover{background:var(--ink)}
+.toast{min-height:1.6rem;margin-top:1rem;font-weight:600}
+
+/* animations */
+.ln{display:block;overflow:hidden;padding-bottom:.06em}
+.ln span{display:block;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.ln:nth-child(2) span{animation-delay:.12s}
+@keyframes up{to{transform:none}}
+@keyframes fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero .say,.hero .btns,.facts div{opacity:0;animation:fade .8s ease forwards}
+.hero .say{animation-delay:.45s}.hero .btns{animation-delay:.6s}
+.facts div:nth-child(1){animation-delay:.75s}.facts div:nth-child(2){animation-delay:.85s}.facts div:nth-child(3){animation-delay:.95s}.facts div:nth-child(4){animation-delay:1.05s}
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+.tk{overflow:hidden;padding:2rem 0 0}
+.ticker{background:var(--lime);border-block:2px solid var(--ink);transform:rotate(-1.5deg);white-space:nowrap;margin:0 -3vw}
+.ticker div{display:inline-block;padding:.8rem 0;font-family:var(--head);font-weight:800;font-size:1.5rem;animation:slide 30s linear infinite}
+.ticker span{margin:0 1.2rem}
+@keyframes slide{to{transform:translateX(-50%)}}
+.btn{transition:background .2s,color .2s,transform .2s}
+.btn:hover{transform:translateY(-3px)}
+.proj:hover{transform:translateY(-6px) rotate(-.7deg)}
+.chips li{transition:transform .2s}
+.chips li:hover{transform:translateY(-3px) rotate(-2deg)}
+
+/* focus */
+.fh{margin:2.4rem 0 1rem;font-size:1.5rem}
+.pitch{font-family:var(--head);font-weight:800;font-size:clamp(1.25rem,3vw,1.8rem);line-height:1.25;letter-spacing:-.01em;margin:0 0 1.2rem;padding:1.3rem 1.5rem;background:var(--blue);color:#fff;border-radius:24px}
+.pitch small{display:block;font:600 .9rem var(--body);opacity:.8;margin-bottom:.5rem;letter-spacing:0}
+.focus{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.focus div{border-radius:22px;padding:1.2rem}
+.focus h3{font-size:1.1rem;margin-bottom:.5rem}
+.focus p{margin:0;font-size:.98rem}
+.f0{background:var(--wash)}.f1{background:var(--lime)}.f2{background:#FFD0BA}
+footer{background:var(--ink);color:#fff;padding:1.4rem 0;font-size:.95rem}
+
+@media (max-width:820px){
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(3){padding-left:0;border-left:0}
+  .facts div:nth-child(n+3){border-top:2px solid rgba(255,255,255,.35)}
+  .about .wrap,.two,.focus{grid-template-columns:1fr}
+  .srow{grid-template-columns:1fr}
+  .badge{position:static;width:120px;height:120px;margin:0 0 1.5rem}
+  .badge{position:relative}
+  .hero{padding-top:2.5rem}
 }
-
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-/* HEADER */
-.header {
-  background: linear-gradient(135deg, #1e293b, #020617);
-  padding: 32px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.5);
-  animation: slideDown 1s ease;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  color: white;
-}
-
-.typing {
-  margin-top: 8px;
-  font-size: 1rem;
-  color: var(--accent);
-  min-height: 24px;
-}
-
-.header p {
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-/* SECTION */
-.section {
-  background: var(--card);
-  margin-top: 28px;
-  padding: 28px;
-  border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0,0,0,.35);
-  animation: fadeUp 0.9s ease forwards;
-}
-
-.section h2 {
-  margin-top: 0;
-  font-size: 1.4rem;
-  color: var(--accent);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding-bottom: 8px;
-}
-
-ul { padding-left: 20px; }
-li { margin-bottom: 8px; }
-
-/* SKILLS */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skill {
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(56,189,248,.15);
-  color: #7dd3fc;
-  font-size: 0.85rem;
-  transition: all .2s ease;
-}
-
-.skill:hover {
-  transform: translateY(-3px) scale(1.05);
-  background: rgba(34,197,94,.25);
-  color: #86efac;
-}
-
-/* LINKS */
-a {
-  color: var(--accent2);
-  text-decoration: none;
-}
-
-a:hover { text-decoration: underline; }
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  margin-top: 40px;
-  color: var(--muted);
-  font-size: 0.8rem;
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
+@media (max-width:520px){ nav a:not(.hire){display:none} }
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto} *{transition:none!important}
+  .badge svg,.ticker div{animation:none}
+  .ln span{transform:none;animation:none}
+  .hero .say,.hero .btns,.facts div{opacity:1;animation:none}
+  .js .reveal{opacity:1;transform:none}
 }
 </style>
+<script>document.documentElement.className+=' js'</script>
 </head>
-
 <body>
-<div class="container">
-
-  <div class="header">
-    <h1>Lakshya Gupta</h1>
-    <div class="typing" id="typing"></div>
-    <p>
-      📧 lakshyagupta1456@gmail.com &nbsp;•&nbsp; 📞 7709921427 <br/>
-      🔗 <a href="https://www.linkedin.com/in/lakshya-gupta-x777888" target="_blank">LinkedIn Profile</a>
-    </p>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Back to top">lg.</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a class="hire" href="#contact">Hire me</a>
+    </nav>
   </div>
+</header>
 
-  <div class="section">
-    <h2>Summary</h2>
-    <p>
-      Motivated <strong>B.Com (Hons)</strong> student pursuing <strong>ACCA</strong> with strong command over
-      financial accounting, IFRS, and business analysis. Analytical, detail-oriented,
-      and focused on building real-world accounting expertise.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Experience</h2>
-    <p><strong>Self-Learner</strong></p>
-    <ul>
-      <li>Solved advanced accounting problems using real-world scenarios</li>
-      <li>Prepared financial statements and cash flow analyses</li>
-      <li>Practiced exam-level MCQs on IFRS, EPS, deferred tax & provisions</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Education</h2>
-    <p>
-      <strong>MIT-WPU (MIT World Peace University), Pune</strong><br/>
-      Bachelor of Commerce (Honours) + ACCA
-    </p>
-    <ul>
-      <li>Core focus on Financial Reporting & Accounting Standards</li>
-      <li>Exam-oriented ACCA preparation strategy</li>
-      <li>Consistent practice of case-based questions</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span class="skill">Financial Accounting</span>
-      <span class="skill">IFRS</span>
-      <span class="skill">Cash Flow Statements</span>
-      <span class="skill">EPS</span>
-      <span class="skill">Deferred Tax</span>
-      <span class="skill">IAS 37</span>
-      <span class="skill">FVOCI / FVTPL</span>
-      <span class="skill">MS Excel</span>
-      <span class="skill">Problem Solving</span>
-      <span class="skill">Attention to Detail</span>
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><defs><path id="ring" d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0"/></defs>
+          <text><textPath href="#ring" textLength="462" lengthAdjust="spacing">Pursuing ACCA • B.Com IFA • Open to work • </textPath></text></svg>
+        <b>IFRS</b>
+      </div>
+      <h1><span class="ln"><span>Lakshya</span></span><span class="ln"><span>Gupta</span></span></h1>
+      <p class="say">Finance and accounting, with the numbers made clear.</p>
+      <div class="btns">
+        <a class="btn fill" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+      <div class="facts">
+        <div>Pursuing ACCA<small>In progress</small></div>
+        <div>B.Com IFA<small>Completed, MIT-WPU Pune</small></div>
+        <div>Financial reporting<small>Main focus, under IFRS</small></div>
+        <div>Open to work<small>Internships &amp; entry-level</small></div>
+      </div>
     </div>
   </div>
 
-  <div class="section">
-    <h2>Interests</h2>
-    <ul>
-      <li>Financial markets & accounting standards updates</li>
-      <li>Personal finance & wealth creation</li>
-      <li>Fitness, discipline & self-growth</li>
-    </ul>
-  </div>
+  <div class="tk" aria-hidden="true"><div class="ticker"><div><span>IFRS</span><span>✦</span><span>EPS</span><span>✦</span><span>Deferred tax</span><span>✦</span><span>Provisions</span><span>✦</span><span>Cash flow</span><span>✦</span><span>Financial statements</span><span>✦</span><span>ACCA</span><span>✦</span><span>IFRS</span><span>✦</span><span>EPS</span><span>✦</span><span>Deferred tax</span><span>✦</span><span>Provisions</span><span>✦</span><span>Cash flow</span><span>✦</span><span>Financial statements</span><span>✦</span><span>ACCA</span><span>✦</span><span>IFRS</span><span>✦</span><span>EPS</span><span>✦</span><span>Deferred tax</span><span>✦</span><span>Provisions</span><span>✦</span><span>Cash flow</span><span>✦</span><span>Financial statements</span><span>✦</span><span>ACCA</span><span>✦</span><span>IFRS</span><span>✦</span><span>EPS</span><span>✦</span><span>Deferred tax</span><span>✦</span><span>Provisions</span><span>✦</span><span>Cash flow</span><span>✦</span><span>Financial statements</span><span>✦</span><span>ACCA</span><span>✦</span></div></div></div>
 
-  <div class="footer">
-    Designed to stand out. Built to be hired 🚀
-  </div>
+  <section class="about" id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <div>
+        <p class="big">I've completed my B.Com in IFA and I'm working towards ACCA. I learn finance by doing it: applying IFRS to realistic business scenarios and building financial statements from scratch.</p>
+        <p>I analyse cash flow, compute EPS, and apply deferred tax and provisioning standards. I'm analytical, detail-minded and self-disciplined, and I'm looking for an internship or entry-level role in finance, accounting, business operations or coordination.</p>
+        <h3 class="fh">My main focus, in plain words</h3>
+        <p class="pitch"><small>Say it in one line</small>I prepare financial statements and apply IFRS standards to real business scenarios.</p>
+        <div class="focus">
+          <div class="f0"><h3>Preparing financial statements</h3><p>Cash flow statements and statements of comprehensive income, in line with IFRS.</p></div>
+          <div class="f1"><h3>Applying IFRS standards</h3><p>EPS, deferred tax and provisions, applied to realistic business cases.</p></div>
+          <div class="f2"><h3>Working towards ACCA</h3><p>Practising the Financial Accounting (FA) and Financial Reporting (FR) papers.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <section class="skills" id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="srow"><h3>Technical</h3>
+        <ul class="chips"><li>Financial reporting &amp; IFRS</li><li>Financial statements</li><li>Cash flow analysis</li><li>EPS, basic &amp; diluted</li><li>Deferred tax &amp; provisions</li><li>Financial instruments</li><li>Corporate finance fundamentals</li></ul></div>
+      <div class="srow"><h3>Tools</h3>
+        <ul class="chips"><li>MS Excel, formulas &amp; analytical functions</li><li>MS Word</li><li>MS PowerPoint</li></ul></div>
+      <div class="srow"><h3>Working style</h3>
+        <ul class="chips"><li>Analytical thinking</li><li>Attention to detail</li><li>Client communication</li><li>Stakeholder management</li><li>Time management</li><li>Adaptability</li></ul></div>
+    </div>
+  </section>
+
+  <section class="exp" id="experience">
+    <div class="wrap">
+      <h2>Experience &amp; education</h2>
+      <div class="two">
+        <article class="panel a">
+          <h3>Independent Financial Accounting Practice</h3>
+          <div class="when">Self-directed, ongoing</div>
+          <ul>
+            <li>Solved advanced IFRS problems on EPS, deferred tax and provisions, applying each standard to realistic business scenarios.</li>
+            <li>Prepared full sets of financial statements, including cash flow statements and statements of comprehensive income, in line with IFRS.</li>
+            <li>Completed ACCA-level multiple-choice sets across the Financial Accounting (FA) and Financial Reporting (FR) papers.</li>
+            <li>Follow changes to accounting standards and global reporting trends to keep my knowledge current.</li>
+          </ul>
+        </article>
+        <article class="panel b">
+          <h3>MIT World Peace University, Pune</h3>
+          <div class="when">B.Com IFA, completed</div>
+          <ul>
+            <li>Studied financial accounting, reporting standards and corporate finance.</li>
+            <li>Case-based coursework aligned with ACCA professional standards, with regular IFRS problem-set practice.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+      <div class="pgrid" id="pgrid"></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Let's talk.</h2>
+      <a class="mail" href="mailto:lakshyagupta1456@gmail.com">lakshyagupta1456@gmail.com</a>
+      <p>Open to internships, virtual projects and full-time roles in finance, accounting, business operations and coordination.</p>
+      <div class="btns">
+        <button class="btn" id="copy" type="button">Copy email address</button>
+        <a class="btn" href="https://linkedin.com/in/lakshya-gupta" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="toast" id="toast" role="status"></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">&copy; <span id="yr">2026</span> Lakshya Gupta</div></footer>
+
+<dialog id="dlg" aria-labelledby="dt">
+  <span class="tag" id="dtag"></span>
+  <h3 id="dt"></h3>
+  <p id="dsum"></p>
+  <ul id="dlist"></ul>
+  <div class="btns">
+    <a class="btn fill hidden" id="dlink" target="_blank" rel="noopener">Open project</a>
+    <button class="btn" id="dclose" type="button">Close</button>
+  </div>
+</dialog>
 
 <script>
-const roles = [
-  "Accounting & ACCA Student",
-  "Future Finance Professional",
-  "IFRS • Financial Reporting • Analysis"
+/* ===== EDIT YOUR PROJECTS HERE =====
+   Copy one block, change the text. "link" is optional (GitHub repo, Drive file, etc.).
+   "tag" becomes a filter button automatically. */
+var PROJECTS=[
+  {title:"IFRS EPS problem sets",tag:"IFRS",
+   summary:"Basic and diluted earnings per share worked through advanced scenarios.",
+   points:["Applied IFRS to realistic business cases","Covered both basic and diluted EPS"],link:""},
+  {title:"Full financial statement sets",tag:"Reporting",
+   summary:"Complete statements prepared from scratch in line with IFRS requirements.",
+   points:["Cash flow statements","Statements of comprehensive income"],link:""},
+  {title:"Deferred tax & provisions workbook",tag:"IFRS",
+   summary:"Practice cases applying the deferred tax and provisioning standards.",
+   points:["Standards applied to realistic scenarios","Add your Excel workings here"],link:""},
+  {title:"ACCA FA & FR question practice",tag:"ACCA",
+   summary:"ACCA-level multiple-choice sets across Financial Accounting and Financial Reporting.",
+   points:["Exam-focused, structured study","Strengthens technical accuracy"],link:""}
 ];
 
-let index = 0;
-let charIndex = 0;
-let isDeleting = false;
-const speed = 90;
-const typingElement = document.getElementById("typing");
+var el=function(id){return document.getElementById(id)};
+var active="All", grid=el("pgrid"), dlg=el("dlg");
 
-function typeEffect() {
-  const current = roles[index];
-  if (isDeleting) {
-    typingElement.textContent = current.substring(0, charIndex--);
-  } else {
-    typingElement.textContent = current.substring(0, charIndex++);
-  }
-
-  if (!isDeleting && charIndex === current.length + 1) {
-    setTimeout(() => isDeleting = true, 1200);
-  }
-
-  if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    index = (index + 1) % roles.length;
-  }
-
-  setTimeout(typeEffect, isDeleting ? speed / 1.8 : speed);
+function tags(){var t=["All"];PROJECTS.forEach(function(p){if(t.indexOf(p.tag)<0)t.push(p.tag)});return t}
+function color(tag){return "c"+((tags().indexOf(tag)-1)%4)}
+function renderFilters(){
+  var box=el("filters");box.innerHTML="";
+  tags().forEach(function(t){
+    var b=document.createElement("button");b.type="button";b.textContent=t;
+    b.setAttribute("aria-pressed",t===active);
+    b.onclick=function(){active=t;renderFilters();renderGrid()};
+    box.appendChild(b);
+  });
 }
+function renderGrid(){
+  grid.innerHTML="";
+  PROJECTS.forEach(function(p,i){
+    if(active!=="All"&&p.tag!==active)return;
+    var b=document.createElement("button");b.type="button";b.className="proj "+color(p.tag);
+    b.innerHTML='<span class="tag"></span><h3></h3><p></p><span class="more">Read more +</span>';
+    b.children[0].textContent=p.tag;b.children[1].textContent=p.title;b.children[2].textContent=p.summary;
+    b.onclick=function(){openProj(i)};
+    grid.appendChild(b);
+  });
+  var e=document.createElement("div");e.className="proj empty";
+  e.innerHTML="<p>More projects coming soon.</p>";
+  grid.appendChild(e);
+}
+function openProj(i){
+  var p=PROJECTS[i];
+  el("dtag").textContent=p.tag;el("dt").textContent=p.title;el("dsum").textContent=p.summary;
+  var l=el("dlist");l.innerHTML="";
+  p.points.forEach(function(x){var li=document.createElement("li");li.textContent=x;l.appendChild(li)});
+  var a=el("dlink");
+  if(p.link){a.href=p.link;a.classList.remove("hidden")}else{a.classList.add("hidden")}
+  dlg.showModal();
+}
+el("dclose").onclick=function(){dlg.close()};
+dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
 
-typeEffect();
+el("copy").onclick=function(){
+  var m="lakshyagupta1456@gmail.com",t=el("toast");
+  function ok(){t.textContent="Email address copied."}
+  if(navigator.clipboard){navigator.clipboard.writeText(m).then(ok,function(){t.textContent=m})}
+  else{t.textContent=m}
+  setTimeout(function(){t.textContent=""},3000);
+};
+
+(function(){
+  var els=document.querySelectorAll(".about .wrap > *, .about .focus > div, .about .pitch, .skills h2, .srow, .exp h2, .panel, #projects .wrap > *, .contact .wrap > *");
+  els.forEach(function(e,i){e.classList.add("reveal");e.style.setProperty("--d",(i%4)*0.08+"s")});
+  if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+
+el("yr").textContent=new Date().getFullYear();
+renderFilters();renderGrid();
 </script>
-
 </body>
 </html>
